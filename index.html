@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" type="text/css" id="u0"
-        href="https://rakko.tools/tools/129/lib/tinymce/skins/ui/oxide/content.min.css">
-    <link rel="stylesheet" type="text/css" id="u1"
-        href="https://rakko.tools/tools/129/lib/tinymce/skins/content/default/content.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FireCamp Gear</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Share+Tech&display=swap" rel="stylesheet">
 </head>
+<body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="fire-glow"></div>
+    <div class="fire-particles" id="fire"></div>
 
-<body id="tinymce" class="mce-content-body " data-id="content" contenteditable="true" spellcheck="false">
-    <p>MikuEngineeringLab!</p>
+    <h1 class="caveat">Miku Engineer Lab</h1>
+    <div class="topic-buttons">
+    <button id="exploreBtn">Career</button>
+    <button id="exploreBtn">Skill</button>
+    <button id="exploreBtn">About</button>
+    </div>
+    <img src="./takibi.png" alt="Campfire Icon" class="campfire-icon">
+  </header>
+
+  <section class="gear-section">
+    <h2>Popular Gear</h2>
+    <div class="gear-grid">
+      <div class="gear-item">
+        <img src="./takibi.png" alt="Lantern">
+        <h3>Lantern</h3>
+      </div>
+      <div class="gear-item">
+        <img src="./takibi.png" alt="Campfire Set">
+        <h3>Campfire Set</h3>
+      </div>
+      <div class="gear-item">
+        <img src="./takibi.png" alt="Tent">
+        <h3>Tent</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 miku</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

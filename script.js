@@ -6,20 +6,31 @@ exploreBtn.addEventListener('click', () => {
   });
 });
 
-// 🔥 パーティクル生成（炎の粒を自動で作成）
-const fireContainer = document.getElementById('fire');
+// 🔥 パーティクル生成（画面右側3割に限定）
+const createParticle = () => {
+  const particle = document.createElement("div");
+  particle.classList.add("fire-particle");
 
-function createParticle() {
-  const particle = document.createElement('div');
-  particle.classList.add('fire-particle');
-  particle.style.left = `${Math.random() * 100}%`;
-  particle.style.animationDuration = `${4.5 + Math.random()}s`;
-  particle.style.opacity = Math.random();
-  fireContainer.appendChild(particle);
+  const areaWidth = window.innerWidth;
+  const startX = areaWidth * 0.85;        // 右側30%
+  const endX = areaWidth - 60;           // 右端から20px内側まで
+  const randomX = startX + Math.random() * (endX - startX);
+
+  particle.style.left = `${randomX}px`;
+
+  const size = Math.random() * 6 + 4;
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+
+  const duration = Math.random() * 3 + 4; // 上昇スピード
+  particle.style.animation = `rise ${duration}s linear forwards`;
+
+  document.body.appendChild(particle);
 
   setTimeout(() => {
     particle.remove();
-  }, 2000);
-}
+  }, duration * 1000);
+};
 
-setInterval(createParticle, 100);
+setInterval(createParticle, 150);
+
